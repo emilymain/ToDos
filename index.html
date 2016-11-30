@@ -10,25 +10,25 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="container main" ng-controller="ToDosController">
+    <div class="container main" ng-controller="ToDosController as todosCtrl">
       <h3>You have {{all.length}} things to do</h3>
-      <form class="form-inline" id='add-todo' ng-submit="add()">
-        <label class="sr-only" for="newTodo.name">Name</label>
-        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.name"/>
+      <form class="form-inline" id='add-todo' ng-submit="todosCtrl.add()">
+        <label class="sr-only" for="todosCtrl.newTodo.name">Name</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="todosCtrl.newTodo.name"/>
 
-        <label class="sr-only" for="newTodo.task">Task</label>
-        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.task"/>
+        <label class="sr-only" for="todosCtrl.newTodo.task">Task</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="todosCtrl.newTodo.task"/>
 
-        <label class="sr-only" for="newTodo.image">Image</label>
-        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.image"/>
+        <label class="sr-only" for="todosCtrl.newTodo.image">Image</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="todosCtrl.newTodo.image"/>
 
-        <label class="sr-only" for="newTodo.complete">Completed</label>
-        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.complete"/>
+        <label class="sr-only" for="todosCtrl.newTodo.complete">Completed</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="todosCtrl.newTodo.complete"/>
 
-        <label class="sr-only" for="newTodo">submit</label>
+        <label class="sr-only" for="todosCtrl.newTodo">submit</label>
         <input class="btn btn-default" type="submit"/>
       </form>
-      <div ng-repeat="todo in all">
+      <div ng-repeat="todo in todosCtrl.all">
         <input type="checkbox" ng-model="todo.complete" /><span ng-class="{strike:todo.complete}"> {{todo.task}}: {{todo.name}} </span>
       <img ng-src="{{todo.image}}" class="todo-image"/>
       </div>
