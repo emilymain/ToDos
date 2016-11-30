@@ -6,8 +6,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/toDosController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap.js"></script>
   </head>
   <body>
+    <div class="container main" ng-controller="ToDosController">
+      <h3>You have {{all.length}} things to do</h3>
+      <form class="form-inline" id='add-todo' ng-submit="add()">
+        <label class="sr-only" for="newTodo.name">Name</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.name"/>
 
+        <label class="sr-only" for="newTodo.task">Task</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.task"/>
+
+        <label class="sr-only" for="newTodo.image">Image</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.image"/>
+
+        <label class="sr-only" for="newTodo.completed">Completed</label>
+        <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.completed"/>
+
+        <label class="sr-only" for="newTodo">Completed</label>
+        <input class="btn btn-default" type="submit"/>
+      </form>
+    </div>
   </body>
 </html>
