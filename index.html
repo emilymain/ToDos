@@ -7,6 +7,7 @@
     <script src="js/app.js"></script>
     <script src="js/toDosController.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap.js"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container main" ng-controller="ToDosController">
@@ -24,14 +25,14 @@
         <label class="sr-only" for="newTodo.completed">Completed</label>
         <input class="form-control" type="text" placeholder="You need to do..." ng-model="newTodo.completed"/>
 
-        <label class="sr-only" for="newTodo">Completed</label>
+        <label class="sr-only" for="newTodo">submit</label>
         <input class="btn btn-default" type="submit"/>
       </form>
 
       <div ng-repeat="todo in all">
         <input type="checkbox" ng-model="todo.complete" /><span ng-class="{strike:todo.complete}"> {{todo.task}}: {{todo.name}} </span>
       <img ng-src="{{todo.image}}" class="todo-image"/>
-    </div>
+      </div>
     </div>
   </body>
 </html>
